@@ -24,7 +24,7 @@ services:
     image: timescale/timescaledb:latest-pg15
     environment:
       POSTGRES_USER: admin
-      POSTGRES_PASSWORD: password123
+      POSTGRES_PASSWORD: 1234
       POSTGRES_DB: streaming_analytics
     ports:
       - "5432:5432"
