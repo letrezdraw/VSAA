@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from datetime import datetime
 from pydantic import BaseModel
+from Queue.Producer import publish
 
 api = FastAPI()
 
@@ -16,6 +17,7 @@ class Heartbeat(BaseModel):
     
 @api.post("/heartbeat")
 def receive_heartbeat(data: Heartbeat):
+    publish(data)
     return{
         "message": "Heartbeat received successfully",
         "data": data
