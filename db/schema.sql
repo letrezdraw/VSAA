@@ -7,4 +7,5 @@ create table raw_heartbeat (
     timestamp TIMESTAMP NOT NULL
 );
 
+create DATABASE vsaa_analytics;
 select create_hypertable('raw_heartbeat', 'timestamp');
